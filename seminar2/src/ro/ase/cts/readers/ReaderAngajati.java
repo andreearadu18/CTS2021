@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import ro.ase.cts.clase.Angajat;
+import ro.ase.cts.clase.Aplicant;
 
-public class ReaderAngajati {
+public class ReaderAngajati implements ReaderAplicant{
 	
-	public static List<Angajat> readAngajati(String file) throws FileNotFoundException {
+	public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
 		Scanner input2 = new Scanner(new File(file));
 		input2.useDelimiter(",");
-		List<Angajat> angajati = new ArrayList<Angajat>();
+		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
 		while (input2.hasNext()) {
 			String nume = input2.next();
@@ -31,6 +32,9 @@ public class ReaderAngajati {
 		}
 		input2.close();
 		return angajati;
+		
 	}
+
+	
 
 }
