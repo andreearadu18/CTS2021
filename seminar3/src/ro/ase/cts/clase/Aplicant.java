@@ -59,6 +59,8 @@ public abstract class Aplicant{
 	}
 	public int getNr_proiecte() {
 		return nr_proiecte;
+		//fdsfs
+		
 	}
 	public void setNr_proiecte(int nr_proiecte) {
 		this.nr_proiecte = nr_proiecte;

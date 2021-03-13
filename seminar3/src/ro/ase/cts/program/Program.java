@@ -12,14 +12,14 @@ import ro.ase.cts.readers.ReaderStudent;
 
 public class Program {
 
-	public static List<Aplicant> citireAplicanti(String numeFisier, ReaderAplicant reader) throws FileNotFoundException{
-		return reader.readAplicanti(numeFisier);
+	public static List<Aplicant> citireAplicanti( ReaderAplicant reader) throws FileNotFoundException{
+		return reader.readAplicanti();
 	}
 	
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicanti;
 		try {
-			listaAplicanti = citireAplicanti("studenti.txt", new ReaderStudent());
+			listaAplicanti = citireAplicanti(new ReaderStudent("studenti.txt"));
 			for(Aplicant aplicant:listaAplicanti)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
