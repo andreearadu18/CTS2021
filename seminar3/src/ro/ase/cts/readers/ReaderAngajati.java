@@ -11,8 +11,8 @@ import ro.ase.cts.clase.Aplicant;
 
 public class ReaderAngajati extends ReaderAplicant{
 	
-	public ReaderAngajati() {
-	
+	public ReaderAngajati(String numeFisier) {
+		super(numeFisier);
 		// TODO Auto-generated constructor stub
 	}
 
