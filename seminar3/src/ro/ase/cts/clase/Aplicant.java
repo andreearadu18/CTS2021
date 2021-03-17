@@ -3,44 +3,49 @@ package ro.ase.cts.clase;
 import java.util.Arrays;
 
 public abstract class Aplicant{
-	protected String nume;
-	protected String prenume;
-	protected int varsta;
-	protected int punctaj;
+	protected String numeAplicant;
+	protected String prenumeAplicat;
+	protected int varstaAplicant;
+	protected int punctajProiect;
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
 	
 	
 	public String getNume() {
-		return nume;
+		return numeAplicant;
 	}
 	public void setNume(String nume) {
-		this.nume = nume;
+		this.numeAplicant = nume;
 	}
 	public String getPrenume() {
-		return prenume;
+		return prenumeAplicat;
 	}
 	public void setPrenume(String prenume) {
-		this.prenume = prenume;
+		this.prenumeAplicat = prenume;
 	}
 	public int getVarsta() {
-		return varsta;
+		return varstaAplicant;
 	}
 	public void setVarsta(int varsta) {
-		this.varsta = varsta;
+		this.varstaAplicant = varsta;
 	}
-	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
+
+	public void afisareRaspunsProiect(Proiect proiect){
+		
+		boolean esteAcceptat = punctajProiect >= proiect.getPragAcceptare();
+		
+		StringBuilder stringBuilder = new StringBuilder("Aplicantul ").append(numeAplicant).append(" ")
+				.append(prenumeAplicat).append(" ");
+		stringBuilder.append(esteAcceptat? " a fost acceptat" : " a fost respins.");
+		
+		System.out.println(stringBuilder.toString());
 	}
 	
 	public int getPunctaj() {
-		return punctaj;
+		return punctajProiect;
 	}
 	public void setPunctaj(int punctaj) {
-		this.punctaj = punctaj;
+		this.punctajProiect = punctaj;
 	}
 	
 	public Aplicant() {
@@ -49,10 +54,10 @@ public abstract class Aplicant{
 	}
 	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumireProiect) {
 		super();
-		this.nume = nume;
-		this.prenume = prenume;
-		this.varsta = varsta;
-		this.punctaj = punctaj;
+		this.numeAplicant = nume;
+		this.prenumeAplicat = prenume;
+		this.varstaAplicant = varsta;
+		this.punctajProiect = punctaj;
 		this.nr_proiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
@@ -70,17 +75,18 @@ public abstract class Aplicant{
 		this.denumireProiect = denumireProiect;
 	}
 	
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Aplicant [nume=");
-		builder.append(nume);
+		builder.append(numeAplicant);
 		builder.append(", prenume=");
-		builder.append(prenume);
+		builder.append(prenumeAplicat);
 		builder.append(", varsta=");
-		builder.append(varsta);
+		builder.append(varstaAplicant);
 		builder.append(", punctaj=");
-		builder.append(punctaj);
+		builder.append(punctajProiect);
 		builder.append(", nr_proiecte=");
 		builder.append(nr_proiecte);
 		builder.append(", denumireProiect=");
@@ -88,6 +94,8 @@ public abstract class Aplicant{
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	public abstract float getSumaFinantare();
 	
 	
 

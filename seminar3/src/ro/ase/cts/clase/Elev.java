@@ -4,20 +4,30 @@ package ro.ase.cts.clase;
 import java.util.Arrays;
 
 public class Elev extends Aplicant{
-	private int clasa;
-	private String tutore;
+	private int clasaElev;
+	private String tutoreElev;
+	private static float sumaFinantare = 30;
+	
+
+	public float getSumaFinantare() {
+		return sumaFinantare;
+	}
+	
+	public static float getSumaFinantata() {
+		return sumaFinantare;
+	}
 	
 	public int getClasa() {
-		return clasa;
+		return clasaElev;
 	}
 	public void setClasa(int i) {
-		this.clasa = i;
+		this.clasaElev = i;
 	}
 	public String getTutore() {
-		return tutore;
+		return tutoreElev;
 	}
 	public void setTutore(String tutore) {
-		this.tutore = tutore;
+		this.tutoreElev = tutore;
 	}
 	
 	
@@ -25,8 +35,8 @@ public class Elev extends Aplicant{
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder("Elev: "); 
 		stringBuilder.append(super.toString());
-		stringBuilder.append(", clasa=").append(clasa);
-		stringBuilder.append(", tutore=").append(tutore);
+		stringBuilder.append(", clasa=").append(clasaElev);
+		stringBuilder.append(", tutore=").append(tutoreElev);
 		return stringBuilder.toString();
 	}
 	
@@ -37,14 +47,9 @@ public class Elev extends Aplicant{
 	public Elev(String nume, String prenume, int varsta, int punctaj,
 			int nr_proiecte, String[] denumireProiect, int clasa, String tutore) {
 		super(nume,prenume,varsta,punctaj,nr_proiecte,denumireProiect);
-		this.clasa = clasa;
-		this.tutore = tutore;
+		this.clasaElev = clasa;
+		this.tutoreElev = tutore;
 	}
-	
-	public int finantare() {
-		int s=30;
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
-	}
+
 	
 }

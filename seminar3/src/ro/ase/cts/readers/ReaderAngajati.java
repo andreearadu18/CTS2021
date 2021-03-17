@@ -9,7 +9,7 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
-public class ReaderAngajati extends ReaderAplicant{
+public class ReaderAngajati extends ReaderAplicanti{
 	
 	public ReaderAngajati(String numeFisier) {
 		super(numeFisier);
@@ -17,22 +17,22 @@ public class ReaderAngajati extends ReaderAplicant{
 	}
 
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.numeFisier));
-		input2.useDelimiter(",");
+		Scanner input = new Scanner(new File(super.numeFisier));
+		input.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Angajat angajat = new Angajat();
-			super.readAplicant(input2, angajat);
-			int salariu = input2.nextInt();
-			String ocupatie = input2.next();
+			super.readAplicant(input, angajat);
+			int salariu = input.nextInt();
+			String ocupatie = input.next();
 		
 			angajat.setSalariu(salariu);
 			angajat.setOcupatie(ocupatie);
 			
 			angajati.add(angajat);
 		}
-		input2.close();
+		input.close();
 		return angajati;
 		
 	}

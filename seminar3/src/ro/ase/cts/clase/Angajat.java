@@ -3,48 +3,52 @@ package ro.ase.cts.clase;
 import java.util.Arrays;
 
 public class Angajat extends Aplicant{
-	private String ocupatie;
-	private int salariu;
+	private String ocupatieAngajat;
+	private int salariuAngajat;
+	private static float sumaFinantare = 10;
+	
+	
+	public float getSumaFinantare() {
+		return sumaFinantare;
+	}
+	
+	public static float getSumaFinantata() {
+		return sumaFinantare;
+	}
 	
 	public String getOcupatie() {
-		return ocupatie;
+		return ocupatieAngajat;
 	}
 	public void setOcupatie(String ocupatie) {
-		this.ocupatie = ocupatie;
+		this.ocupatieAngajat = ocupatie;
 	}
 	public int getSalariu() {
-		return salariu;
+		return salariuAngajat;
 	}
 	public void setSalariu(int salariu) {
-		this.salariu = salariu;
+		this.salariuAngajat = salariu;
 	}
+	
 	public Angajat(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumire_Proiecte,int salariu,String ocupatie) {
 		super(nume,prenume,varsta,punctaj,nr_proiecte,denumire_Proiecte);
-		this.salariu = salariu;
-		this.ocupatie = ocupatie;
+		this.salariuAngajat = salariu;
+		this.ocupatieAngajat = ocupatie;
 	}
 	public Angajat() {
 		super();
 		
 	}
 	
-	
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder("Angajat: "); 
 		stringBuilder.append(super.toString());
-		stringBuilder.append(", ocupatie=").append(ocupatie);
-		stringBuilder.append(", salariu=").append(salariu);
+		stringBuilder.append(", ocupatie=").append(ocupatieAngajat);
+		stringBuilder.append(", salariu=").append(salariuAngajat);
 		return stringBuilder.toString();
 
 	}
 	
 	
-	public int finantare() {
-		int s=10;
-		// TODO Auto-generated method stub
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
-	}
 	
 }

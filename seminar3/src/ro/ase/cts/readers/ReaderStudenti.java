@@ -9,8 +9,8 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Student;
 
-public class ReaderStudent extends ReaderAplicant{
-	public ReaderStudent(String numeFisier) {
+public class ReaderStudenti extends ReaderAplicanti{
+	public ReaderStudenti(String numeFisier) {
 		super(numeFisier);
 		// TODO Auto-generated constructor stub
 	}

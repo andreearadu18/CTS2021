@@ -9,28 +9,28 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
-public class ReaderElevi extends ReaderAplicant{
+public class ReaderElevi extends ReaderAplicanti{
 	public ReaderElevi(String numeFisier) {
 		super(numeFisier);
 		// TODO Auto-generated constructor stub
 	}
 
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.numeFisier));
-		input2.useDelimiter(",|\n");
+		Scanner input = new Scanner(new File(super.numeFisier));
+		input.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Elev elev = new Elev();
-			super.readAplicant(input2, elev);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
+			super.readAplicant(input, elev);
+			int clasa = input.nextInt();
+			String tutore = input.next();
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
 			elevi.add(elev);
 		}
 
-		input2.close();
+		input.close();
 		return elevi;
 	}
 }
