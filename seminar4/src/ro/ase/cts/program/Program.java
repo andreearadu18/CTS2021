@@ -1,6 +1,7 @@
 package ro.ase.cts.program;
 
-import ro.ase.cts.singletone.AsigurareMedicala;
+import ro.ase.cts.bar.Bar;
+import ro.ase.cts.singleton.AsigurareMedicala;
 
 public class Program {
 
@@ -20,6 +21,13 @@ public class Program {
 		ro.ase.cts.singletonlazy.AsigurareMedicala asigurareMedicalaLazy2 = ro.ase.cts.singletonlazy.AsigurareMedicala.getInstance(4,"Andreea", 800.6f);
 		System.out.println(asigurareMedicalaLazy.toString());
 		System.out.println(asigurareMedicalaLazy2.toString());
+		
+		
+		Bar bar1 = Bar.getInstance("Some bar", 30, 800.00);
+		Bar bar2 = Bar.getInstance("Some other bar", 20, 700.00);
+		bar2.setNrLocuriDisponibile(2);
+		System.out.println(bar1.toString());
+		System.out.println(bar2.toString());
 	}
 
 }

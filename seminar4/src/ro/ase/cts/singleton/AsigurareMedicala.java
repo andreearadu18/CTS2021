@@ -1,11 +1,11 @@
-package ro.ase.cts.singletone;
+package ro.ase.cts.singleton;
 
 public class AsigurareMedicala {
 	private int id;
 	private String numeAsigurat;
 	private float contributie;
 	
-	private static AsigurareMedicala asigurareMedicala = new AsigurareMedicala(0, "Andreea", 300.0f); 
+	private static AsigurareMedicala asigurareMedicala = new AsigurareMedicala(0, "Andreea", 300.0f); //prb: valori hardcodate
 	
 	private AsigurareMedicala(int id, String numeAsigurat, float contributie) {
 		super();
