@@ -3,6 +3,8 @@ package ro.ase.cts.builder.program;
 import ro.ase.cts.builder.clase.Rezervare;
 import ro.ase.cts.builder.clase.RezervareBuilder;
 import ro.ase.cts.builder.clase.RezervareBuilderV2;
+import ro.cts.ase.prototype.AbstractPrototype;
+import ro.cts.ase.prototype.ContClient;
 
 public class Main {
 
@@ -32,6 +34,13 @@ public class Main {
 		System.out.println(rezervare7.toString());
 		
 		//E.4 - prototype
+		
+		AbstractPrototype abstractPrototype = (AbstractPrototype) new ContClient("Andreea", 21,1);
+		AbstractPrototype abstractPrototype1 = abstractPrototype.copiaza();
+		ContClient clientStadion = (ContClient) abstractPrototype.copiaza();
+		
+		System.out.println(abstractPrototype.toString());
+		System.out.println(clientStadion.toString());
 	}
 
 }
