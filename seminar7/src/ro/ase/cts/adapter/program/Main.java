@@ -21,6 +21,9 @@ public class Main {
 		//CreditAbstract ca = new AdapterCrediteClasa(6000, "Ana");
 		AdapterCrediteClasa adapterClasa = new AdapterCrediteClasa(6000, "Ana");
 		creeazaCredit(adapterClasa);
+		
+		
+		
 
 	}
 	
