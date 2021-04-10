@@ -22,6 +22,10 @@ public class Program {
 		DecoratorAbstract decoratorAbstract2 = new DecoratorContactlessTelefon(card);
 		decoratorAbstract2.platesteContactless();
 	
+		//decorare multipla
+		DecoratorAbstract decoratorAbstract3 = new DecoratorContactlessSimplu(decoratorAbstract2);
+	
+	
 
 	}
 }
