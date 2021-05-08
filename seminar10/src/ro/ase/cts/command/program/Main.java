@@ -9,7 +9,7 @@ import ro.ase.cts.command.clase.ManagerComenzi;
 public class Main {
 
 	public static void main(String[] args) {
-		//D.16 Banca - Command
+		//D.15 Banca - Command
 		
 		ManagerComenzi comenzi = new ManagerComenzi();
 		ContBancar cont = new ContBancar("Andreea");
