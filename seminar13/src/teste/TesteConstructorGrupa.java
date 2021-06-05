@@ -1,4 +1,4 @@
-package tests;
+package teste;
 
 import static org.junit.Assert.*;
 
@@ -48,4 +48,6 @@ public class TesteConstructorGrupa {
 		Grupa grupa = new Grupa(1085);
 		assertNotNull(grupa.getStudenti());
 	}
+	
+	
 }
