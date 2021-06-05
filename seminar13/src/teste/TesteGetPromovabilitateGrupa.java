@@ -4,15 +4,20 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
 import clase.Student;
 import dubluriTeste.StudentDummy;
+import suite.categorii.ITestePromovabilitateCategorii;
+import suite.categorii.ITesteUrgente;
 
+@Category(ITestePromovabilitateCategorii.class)
 public class TesteGetPromovabilitateGrupa {
 	
 
 	@Test
+	@Category(ITesteUrgente.class)
 	public void testRight() {
 		Grupa grupa = new Grupa(1085);
 		for(int i = 0; i < 3; i++) {
@@ -29,7 +34,10 @@ public class TesteGetPromovabilitateGrupa {
 		}
 		assertEquals(0.7, grupa.getPromovabilitate(), 0.01);
 	}
+	
+	
 	@Test
+	@Category(ITesteUrgente.class)
 	public void testLowerBound() {
 		Grupa grupa = new Grupa(1085);
 		for(int i = 0; i < 6; i++) {

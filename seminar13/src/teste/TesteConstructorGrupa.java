@@ -3,12 +3,16 @@ package teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
+import suite.categorii.ITestePromovabilitateCategorii;
+import suite.categorii.ITesteUrgente;
 
 public class TesteConstructorGrupa {
 	
 	@Test
+	@Category(ITesteUrgente.class)
 	public void testRight() {
 		Grupa grupa = new Grupa(1085);
 		assertEquals(1085, grupa.getNrGrupa());
@@ -16,6 +20,7 @@ public class TesteConstructorGrupa {
 	
 
 	@Test
+	@Category(ITesteUrgente.class)
 	public void testBoundaryLimitaInferioara() {
 		Grupa grupa = new Grupa(1000);
 		assertEquals(1000, grupa.getNrGrupa());

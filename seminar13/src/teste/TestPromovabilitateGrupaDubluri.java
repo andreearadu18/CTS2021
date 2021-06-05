@@ -3,11 +3,14 @@ package teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
 import dubluriTeste.StudentDummy;
 import dubluriTeste.StudentFake;
 import dubluriTeste.StudentStub;
+import suite.categorii.ITestePromovabilitateCategorii;
+import suite.categorii.ITesteUrgente;
 
 public class TestPromovabilitateGrupaDubluri {
 
@@ -20,6 +23,7 @@ public class TestPromovabilitateGrupaDubluri {
 	}
 
 	@Test
+	@Category(ITestePromovabilitateCategorii.class)
 	public void testReferenceCuStab() {
 		Grupa grupa = new Grupa(1080);
 		grupa.adaugaStudent(new StudentStub());
@@ -28,6 +32,7 @@ public class TestPromovabilitateGrupaDubluri {
 	}
 	
 	@Test
+	@Category({ITestePromovabilitateCategorii.class, ITesteUrgente.class})
 	public void testReferenceCuFake() {
 		Grupa grupa = new Grupa(1080);
 		for(int i =0; i < 7; i++) {
